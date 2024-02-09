@@ -14,14 +14,11 @@ cc_prebuilt_library_shared {
 		none: true,
 	},
 	target: {
-		android_arm: {
-			srcs: ["proprietary/vendor/lib/libagm.so"],
-		},
 		android_arm64: {
 			srcs: ["proprietary/vendor/lib64/libagm.so"],
 		},
 	},
-	compile_multilib: "both",
+	compile_multilib: "64",
 	check_elf_files: false,
 	prefer: true,
 	soc_specific: true,
@@ -34,14 +31,11 @@ cc_prebuilt_library_shared {
 		none: true,
 	},
 	target: {
-		android_arm: {
-			srcs: ["proprietary/vendor/lib/libar-gsl.so"],
-		},
 		android_arm64: {
 			srcs: ["proprietary/vendor/lib64/libar-gsl.so"],
 		},
 	},
-	compile_multilib: "both",
+	compile_multilib: "64",
 	check_elf_files: false,
 	prefer: true,
 	soc_specific: true,
@@ -54,74 +48,11 @@ cc_prebuilt_library_shared {
 		none: true,
 	},
 	target: {
-		android_arm: {
-			srcs: ["proprietary/vendor/lib/libar-pal.so"],
-		},
 		android_arm64: {
 			srcs: ["proprietary/vendor/lib64/libar-pal.so"],
 		},
 	},
-	compile_multilib: "both",
-	check_elf_files: false,
-	prefer: true,
-	soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-	name: "liblx-osal",
-	owner: "xiaomi",
-	strip: {
-		none: true,
-	},
-	target: {
-		android_arm: {
-			srcs: ["proprietary/vendor/lib/liblx-osal.so"],
-		},
-		android_arm64: {
-			srcs: ["proprietary/vendor/lib64/liblx-osal.so"],
-		},
-	},
-	compile_multilib: "both",
-	check_elf_files: false,
-	prefer: true,
-	soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-	name: "vendor.qti.hardware.AGMIPC@1.0-impl",
-	owner: "xiaomi",
-	strip: {
-		none: true,
-	},
-	target: {
-		android_arm: {
-			srcs: ["proprietary/vendor/lib/vendor.qti.hardware.AGMIPC@1.0-impl.so"],
-		},
-		android_arm64: {
-			srcs: ["proprietary/vendor/lib64/vendor.qti.hardware.AGMIPC@1.0-impl.so"],
-		},
-	},
-	compile_multilib: "both",
-	check_elf_files: false,
-	prefer: true,
-	soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-	name: "vendor.qti.hardware.pal@1.0-impl",
-	owner: "xiaomi",
-	strip: {
-		none: true,
-	},
-	target: {
-		android_arm: {
-			srcs: ["proprietary/vendor/lib/vendor.qti.hardware.pal@1.0-impl.so"],
-		},
-		android_arm64: {
-			srcs: ["proprietary/vendor/lib64/vendor.qti.hardware.pal@1.0-impl.so"],
-		},
-	},
-	compile_multilib: "both",
+	compile_multilib: "64",
 	check_elf_files: false,
 	prefer: true,
 	soc_specific: true,
@@ -162,6 +93,23 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+	name: "liblx-osal",
+	owner: "xiaomi",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm64: {
+			srcs: ["proprietary/vendor/lib64/liblx-osal.so"],
+		},
+	},
+	compile_multilib: "64",
+	check_elf_files: false,
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
 	name: "libthermalclient",
 	owner: "xiaomi",
 	strip: {
@@ -170,6 +118,40 @@ cc_prebuilt_library_shared {
 	target: {
 		android_arm64: {
 			srcs: ["proprietary/vendor/lib64/libthermalclient.so"],
+		},
+	},
+	compile_multilib: "64",
+	check_elf_files: false,
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "vendor.qti.hardware.AGMIPC@1.0-impl",
+	owner: "xiaomi",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm64: {
+			srcs: ["proprietary/vendor/lib64/vendor.qti.hardware.AGMIPC@1.0-impl.so"],
+		},
+	},
+	compile_multilib: "64",
+	check_elf_files: false,
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "vendor.qti.hardware.pal@1.0-impl",
+	owner: "xiaomi",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm64: {
+			srcs: ["proprietary/vendor/lib64/vendor.qti.hardware.pal@1.0-impl.so"],
 		},
 	},
 	compile_multilib: "64",
@@ -654,15 +636,6 @@ prebuilt_etc_xml {
 }
 
 prebuilt_etc_xml {
-	name: "memtrack_qti",
-	owner: "xiaomi",
-	src: "proprietary/vendor/etc/vintf/manifest/memtrack_qti.xml",
-	filename_from_src: true,
-	sub_dir: "vintf/manifest",
-	soc_specific: true,
-}
-
-prebuilt_etc_xml {
 	name: "qms-saidl",
 	owner: "xiaomi",
 	src: "proprietary/vendor/etc/vintf/manifest/qms-saidl.xml",
@@ -756,15 +729,6 @@ prebuilt_etc_xml {
 	name: "manifest_vendor.xiaomi.hardware.mlipay",
 	owner: "xiaomi",
 	src: "proprietary/odm/etc/vintf/manifest/manifest_vendor.xiaomi.hardware.mlipay.xml",
-	filename_from_src: true,
-	sub_dir: "vintf/manifest",
-	device_specific: true,
-}
-
-prebuilt_etc_xml {
-	name: "manifest_vendor.xiaomi.hardware.mtdservice",
-	owner: "xiaomi",
-	src: "proprietary/odm/etc/vintf/manifest/manifest_vendor.xiaomi.hardware.mtdservice.xml",
 	filename_from_src: true,
 	sub_dir: "vintf/manifest",
 	device_specific: true,
