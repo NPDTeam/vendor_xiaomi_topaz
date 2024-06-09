@@ -276,7 +276,7 @@ volume index from 0 to 100.
             <point>100,0</point>
         </volume>
         <volume deviceCategory="DEVICE_CATEGORY_SPEAKER">
-            <point>0,-8000</point>
+            <point>0,-75800</point>
             <point>1,-7000</point>
             <point>6,-6000</point>
             <point>13,-5000</point>

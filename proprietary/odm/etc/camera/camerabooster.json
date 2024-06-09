@@ -16,6 +16,7 @@
             "cam_boost_early_enable": true,
             "perceptible_support": true,
             "lmkd_perceptible_support":true
+            "inhibit_dynamic_enable":false
         },
     "oom": {
             "oom_level": "23040:0,38400:100,69120:200,102400:300,179200:800,307200:900",
@@ -25,6 +26,7 @@
         {
             "name": "pss_threshold",
             "config": {
+                "com.ss.android.ugc.aweme.lite": 51200,
                 "com.google.android.youtube": 51200,
                 "com.google.android.apps.youtube.music": 51200,
                 "com.miui.home": 716800
@@ -53,7 +55,7 @@
             "kill_lowprio_sysapp_threshlod": 0,
             "kill_highprio_sysapp_threshlod": 0,
             "kill_tag": 1,
-            "protect_locktask_num": 0,
+            "protect_locktask_num": 1,
             "3rdcam_boost_threshold": 2097152,
             "3rd_skip_task_lower": 3,
             "3rd_lowAdj_threshold": 701,
